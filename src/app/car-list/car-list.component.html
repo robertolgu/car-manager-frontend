@@ -1,0 +1,29 @@
+<div class="cotnainer">
+    <div class="card">
+        <h3 class="text-center">Car List</h3>
+        <div class="card-body">
+            <table  matSort (matSortChange)="sortData($event)" class="table table-stripped">
+                <thead>
+                    <th mat-sort-header="code">Code</th>
+                    <th mat-sort-header="name">Name</th>
+                    <th mat-sort-header="intake">Intake</th>
+                    <th mat-sort-header="maxSpeed">Max Speed</th>
+                    <th mat-sort-header="purchaseDate">Purchase Date</th>
+                    <th mat-sort-header="carType">Type</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let car of cars">
+                        <a [routerLink]="['/car', car.id]" >
+                            <td>{{ car.code }}</td>         </a>
+                            <td>{{ car.name }}</td>
+                            <td>{{ car.intake }}</td>
+                            <td>{{ car.maxSpeed }}</td>
+                            <td>{{ car.purchaseDate }}</td>
+                            <td>{{ car.carType }}</td>
+               
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
